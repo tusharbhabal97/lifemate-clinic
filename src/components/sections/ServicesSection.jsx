@@ -38,20 +38,20 @@ export default function ServicesSection() {
     <section id="services" className="relative bg-[#edf3f7] py-20">
       <DotCluster className="absolute left-20 top-20" />
       <div className="mx-auto w-full max-w-[1320px] px-5 lg:px-6">
-        <h3 className="text-center text-[56px] font-bold text-[#3d3d3d]">
+        <h3 className="text-center text-[36px] font-bold text-[#3d3d3d] md:text-[46px] lg:text-[56px]">
           Top <span className="text-[#2cbeff]">cardiac services</span> we offer
         </h3>
         <p className="mx-auto mt-6 max-w-[900px] text-center text-[16px] leading-8 text-[#888888]">
           Lifemate Clinic provides focused cardiology and preventive healthcare services for patients in JM Road, Deccan Gymkhana, and nearby Pune areas.
         </p>
 
-        <div className="mt-12 grid grid-cols-2 gap-7">
+        <div className="mt-12 grid grid-cols-1 gap-7 lg:grid-cols-2">
           {services.slice(0, 2).map((s) => (
             <ServiceCard key={s.title} {...s} twoCol />
           ))}
         </div>
 
-        <div className="mt-8 grid grid-cols-3 gap-7">
+        <div className="mt-8 grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3">
           {services.slice(2).map((s) => (
             <ServiceCard key={s.title} {...s} />
           ))}
