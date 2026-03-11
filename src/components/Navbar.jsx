@@ -9,17 +9,6 @@ const links = [
   { label: "Appointment", href: "#appointment" },
 ];
 
-function LogoMark() {
-  return (
-    <span className="relative block h-10 w-10">
-      <span className="absolute left-0 top-1/2 h-5 w-5 -translate-y-1/2 rounded-l-full bg-[#2cbeff]" />
-      <span className="absolute left-1/2 top-1/2 h-5 w-5 -translate-y-1/2 rounded-r-full bg-[#0084d4]" />
-      <span className="absolute left-1/2 top-0 h-5 w-5 -translate-x-1/2 rounded-t-full bg-[#00a4f4]" />
-      <span className="absolute left-1/2 bottom-0 h-5 w-5 -translate-x-1/2 rounded-b-full bg-[#75d4ff]" />
-    </span>
-  );
-}
-
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const phoneHref = `tel:${clinicInfo.phonePrimary.replace(/\s+/g, "")}`;
@@ -27,9 +16,17 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#dbe7ef] bg-[#edf3f7]/95 backdrop-blur">
       <nav className="mx-auto flex h-24 w-full max-w-[1320px] items-center px-5 lg:px-6" aria-label="Primary">
-        <a href="#home" className="flex items-center gap-3" aria-label={`${clinicInfo.name} Home`}>
-          <LogoMark />
-          <span className="text-[30px] font-bold leading-none text-[#0069ab]">{clinicInfo.name}</span>
+        <a href="#home" className="flex items-center gap-3" aria-label="LifeMate Healthcare Home">
+          <img src="/images/logo.png" alt="LifeMate Healthcare" className="h-10 w-10 object-contain" />
+          <span className="flex flex-col leading-none">
+            <span className="text-[20px] font-bold leading-[1] tracking-[0.1px] text-[#0E5A8A] md:text-[22px]">
+              LifeMate Clinic
+              <sup className="ml-1 align-super text-[9px] font-bold text-[#0E5A8A]/70">TM</sup>
+            </span>
+            <span className="mt-1 text-[9px] font-semibold uppercase tracking-[1.5px] text-[#0E5A8A] md:text-[10px]">
+              Pvt Ltd
+            </span>
+          </span>
         </a>
 
         <button

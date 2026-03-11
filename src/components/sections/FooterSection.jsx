@@ -5,6 +5,9 @@ export default function FooterSection() {
   const phoneSecondaryHref = `tel:${clinicInfo.phoneSecondary.replace(/\s+/g, "")}`;
   const emailHref = `mailto:${clinicInfo.email}`;
   const mapHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(clinicInfo.address)}`;
+  const companyName = "LifeMate Healthcare Pvt Ltd";
+  const companyTagline =
+    "Trusted healthcare network focused on patient-first care, hospital excellence, and future-ready health innovation.";
 
   const footerLinks = [
     {
@@ -33,8 +36,6 @@ export default function FooterSection() {
         { label: "About Clinic", href: "#about" },
         { label: "Doctor Profile", href: "#doctors" },
         { label: "Location & Directions", href: mapHref },
-        { label: "Patient Instructions", href: "#how" },
-        { label: "Privacy Notice", href: "#faq" },
       ],
     },
   ];
@@ -49,27 +50,21 @@ export default function FooterSection() {
   return (
     <footer className="border-t border-[#dbe7ef] bg-[#deeff8] pb-12 pt-16">
       <div className="mx-auto max-w-[1320px] px-5 lg:px-6">
-        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-[1.2fr_1fr_1fr_1fr]">
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
           <div>
-            <div className="flex items-center gap-3">
-              <span className="relative block h-16 w-16">
-                <span className="absolute left-0 top-1/2 h-8 w-8 -translate-y-1/2 rounded-l-full bg-[#2cbeff]" />
-                <span className="absolute left-1/2 top-1/2 h-8 w-8 -translate-y-1/2 rounded-r-full bg-[#0084d4]" />
-                <span className="absolute left-1/2 top-0 h-8 w-8 -translate-x-1/2 rounded-t-full bg-[#00a4f4]" />
-                <span className="absolute left-1/2 bottom-0 h-8 w-8 -translate-x-1/2 rounded-b-full bg-[#75d4ff]" />
+            <div className="flex items-center gap-4">
+              <img src="/images/logo.png" alt="LifeMate Healthcare" className="h-16 w-16 object-contain" />
+              <span className="flex flex-col leading-none">
+                <span className="text-[24px] font-bold leading-[1] tracking-[0.1px] text-[#0E5A8A]">
+                  LifeMate Clinic
+                  <sup className="ml-1 align-super text-[11px] font-bold text-[#0E5A8A]/70">TM</sup>
+                </span>
+                <span className="mt-1 text-[11px] font-semibold uppercase tracking-[1.5px] text-[#0E5A8A]">
+                  Pvt Ltd
+                </span>
               </span>
-              <span className="text-[32px] font-bold text-[#0069ab] md:text-[42px]">{clinicInfo.name}</span>
             </div>
-            <p className="mt-7 text-[16px] leading-8 text-[#5d5d5d]">
-              <a href={mapHref} target="_blank" rel="noreferrer" className="hover:text-[#0084d4]">
-                {clinicInfo.address}
-              </a>
-              <br />
-              <a href={phonePrimaryHref} className="hover:text-[#0084d4]">{clinicInfo.phonePrimary}</a> |{" "}
-              <a href={phoneSecondaryHref} className="hover:text-[#0084d4]">{clinicInfo.phoneSecondary}</a>
-              <br />
-              <a href={emailHref} className="hover:text-[#0084d4]">{clinicInfo.email}</a>
-            </p>
+            <p className="mt-6 max-w-[420px] text-[16px] leading-8 text-[#5d5d5d]">{companyTagline}</p>
           </div>
 
           {footerLinks.map((group) => (
@@ -86,10 +81,25 @@ export default function FooterSection() {
               </ul>
             </div>
           ))}
+
+          <div>
+            <h4 className="text-[17px] font-semibold text-[#0084d4]">Contact</h4>
+            <div className="mt-5 grid gap-2 text-[15px] text-[#5d5d5d]">
+              <a href={mapHref} target="_blank" rel="noreferrer" className="hover:text-[#0084d4]">
+                Flat No.104, Samadhan Apartments, Good Luck Square, beside The Oakwood Hotel, Deccan Gymkhana, Bhandarkar Rd, Pune, Maharashtra 411004
+              </a>
+              <div className="flex flex-wrap items-center gap-2">
+                <a href={phonePrimaryHref} className="hover:text-[#0084d4]">{clinicInfo.phonePrimary}</a>
+                <span className="text-[#9bb2c1]">|</span>
+                <a href={phoneSecondaryHref} className="hover:text-[#0084d4]">{clinicInfo.phoneSecondary}</a>
+              </div>
+              <a href={emailHref} className="hover:text-[#0084d4]">{clinicInfo.email}</a>
+            </div>
+          </div>
         </div>
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-[#9ed9fa] pt-6 text-[16px] text-[#888888] sm:flex-row sm:items-center sm:justify-between">
-          <div className="flex flex-wrap gap-3 text-[13px] font-semibold text-[#00a4f4]">
+        <div className="mt-10 flex flex-col gap-5 border-t border-[#9ed9fa] pt-6 text-[16px] text-[#888888]">
+          <div className="flex flex-wrap justify-center gap-3 text-[13px] font-semibold text-[#00a4f4]">
             {quickActions.map((action) => (
               <a
                 key={action.label}
@@ -100,7 +110,20 @@ export default function FooterSection() {
               </a>
             ))}
           </div>
-          <p className="text-center sm:text-right">{clinicInfo.name} ? {new Date().getFullYear()} All Rights Reserved</p>
+          <div className="text-center">
+            <p>@{new Date().getFullYear()} {companyName}. All rights reserved.</p>
+            <p>
+              Developed and maintained by{" "}
+              <a
+                href="https://20sdevelopers.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="font-semibold text-[#0084d4] hover:text-[#0069ab]"
+              >
+                20's Developers
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </footer>
