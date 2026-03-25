@@ -59,9 +59,9 @@ export default function FooterSection() {
                   LifeMate Clinic
                   <sup className="ml-1 align-super text-[11px] font-bold text-[#0E5A8A]/70">TM</sup>
                 </span>
-                <span className="mt-1 text-[11px] font-semibold uppercase tracking-[1.5px] text-[#0E5A8A]">
+                {/* <span className="mt-1 text-[11px] font-semibold uppercase tracking-[1.5px] text-[#0E5A8A]">
                   Pvt Ltd
-                </span>
+                </span> */}
               </span>
             </div>
             <p className="mt-6 max-w-[420px] text-[16px] leading-8 text-[#5d5d5d]">{companyTagline}</p>

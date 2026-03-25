@@ -23,9 +23,9 @@ export default function Navbar() {
               LifeMate Clinic
               <sup className="ml-1 align-super text-[9px] font-bold text-[#0E5A8A]/70">TM</sup>
             </span>
-            <span className="mt-1 text-[9px] font-semibold uppercase tracking-[1.5px] text-[#0E5A8A] md:text-[10px]">
+            {/* <span className="mt-1 text-[9px] font-semibold uppercase tracking-[1.5px] text-[#0E5A8A] md:text-[10px]">
               Pvt Ltd
-            </span>
+            </span> */}
           </span>
         </a>
 

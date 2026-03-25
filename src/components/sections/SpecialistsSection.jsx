@@ -3,10 +3,16 @@ import DotCluster from "../shared/DotCluster";
 
 const doctors = [
   {
-    name: "Dr. Swapnil Mate (Interventional Cardiologist)",
+    name: "Dr. Swapnil D. Mate (Interventional Cardiologist)",
     desc: "Focused on interventional and preventive cardiology, Dr. Mate works on early diagnosis, risk reduction, and long-term cardiovascular outcomes.",
     experience: "10+ years in interventional cardiology",
     image: "/images/specialist-female.png",
+  },
+  {
+    name: "Dr. Mate D. Ajay",
+    desc: "MBBS, General Physician. Medical Registration Verified. Dr. Mate Ajay Dhondibhau has 22 years of experience and completed MBBS from U.H. Science in 2004.",
+    experience: "22 Years Experience Overall",
+    image: "/images/specialist-male.png",
   },
   {
     name: "Lifemate Cardiac Care Team",
